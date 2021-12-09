@@ -3,14 +3,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart' as latlng;
-import 'package:material_floating_search_bar/material_floating_search_bar.dart';
+
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  //const MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
@@ -20,12 +20,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(),
+      home: MyHomePage(),
     );
   }
 }
  class MyHomePage extends StatefulWidget {
-   const MyHomePage({Key? key}) : super(key: key);
+  const MyHomePage({Key key}) : super(key: key);
+
+   //const MyHomePage({Key? key}) : super(key: key);
  
    @override
    _MyHomePageState createState() => _MyHomePageState();
@@ -140,14 +142,15 @@ class MyApp extends StatelessWidget {
                  padding: const EdgeInsets.all(8.0),
                  child: TextFormField(
                    keyboardType: TextInputType.streetAddress,
+                   enabled: false,
                    decoration: const InputDecoration(
-                     fillColor: Colors.white,
-                     filled: true,
-                       prefixIcon: Icon(Icons.location_searching),
-                     hintText: 'My Location',
-                     suffixIcon: Icon(Icons.search),
-                     border: OutlineInputBorder(borderSide: BorderSide(color: Colors.transparent),
-                     borderRadius: BorderRadius.only(bottomRight: Radius.circular(10),topLeft: Radius.circular(10),topRight:Radius.circular(10),bottomLeft: Radius.circular(10),),)
+                       fillColor: Colors.white,
+                       filled: true,
+                       prefixIcon: Icon(Icons.pin_drop),
+                       hintText: 'Final Destination',
+                       suffixIcon: Icon(Icons.search),
+                       border: OutlineInputBorder(borderSide: BorderSide(color: Colors.transparent),
+                         borderRadius: BorderRadius.only(bottomRight: Radius.circular(10),topLeft: Radius.circular(10),topRight:Radius.circular(10),bottomLeft: Radius.circular(10),),)
                    ),
                  ),
                ),
@@ -155,6 +158,7 @@ class MyApp extends StatelessWidget {
                  padding: const EdgeInsets.all(8.0),
                  child: TextFormField(
                    keyboardType: TextInputType.streetAddress,
+                   enabled: false,
                    decoration: const InputDecoration(
                        fillColor: Colors.white,
                        filled: true,
@@ -173,4 +177,4 @@ class MyApp extends StatelessWidget {
      );
    }
  }
- 
+
